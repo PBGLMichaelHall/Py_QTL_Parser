@@ -1,3 +1,9 @@
+#' @title Py_QTL_Parser
+#' @description Parses a vcf file which has been converted to a tidy data frame before running the operation
+#' @param vcf A vcf file that is as a tidy data frame
+#' @param HighBulk The name of the HighBulk sample
+#' @param LowBulk The name of the LowBulk sample
+#' @export
 
 
 Py_QTL_Parser <- function(vcf,HighBulk,LowBulk){
