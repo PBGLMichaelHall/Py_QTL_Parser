@@ -23,6 +23,7 @@ Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430")
  for more help
  #The analysis takes over 4 hours
  
- ![TerminalOutput](/home/michael/Desktop/RiceCold/image/TerminalOutput.png)
- 
+ ![TerminalOutput](https://github.com/PBGLMichaelHall/Py_QTL_Parser/blob/main/extdata/TerminalOutput.png)
+
 ```
+![TerminalOutput](https://user-images.githubusercontent.com/93121277/156781414-34d8517f-10cc-4bf7-bc2a-f09bb1f2b678.png)
