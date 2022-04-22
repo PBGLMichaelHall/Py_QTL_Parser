@@ -24,6 +24,13 @@ Load/install libraries
 .. code:: r 
 
    setwd("/home/michael/Desktop/RiceCold/")
+   
+   
+   
+Pre-Filtering Rules
+=================================================
+
+
 .. code:: r
 
    Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2).
@@ -32,7 +39,12 @@ Load/install libraries
 
    Also, the QTL analysis will only take SNPS, ie, length of REF and ALT== 1. However this is addressed in Py_QTL_Parser function.
 
-==================================================================================================================================================================================
+=========================================================================================================================================================
+
+
+
+VCF Format Fields and Bulk Segregant Sample Names
+=================================================
 
 .. code:: r
 
@@ -40,6 +52,9 @@ Load/install libraries
       
 .. figure:: ../images/gt.png
    :alt: 
+   
+R Script
+========
    
 .. code:: r
    
@@ -54,8 +69,14 @@ Load/install libraries
    # The file is named Hall.csv and should be in the working directory.
    # I want to inspect the imported header.
    
+Header of Input CSV file with overall Quality Socres, Genotype Quality and Allelic Depths for both High and Low Bulks
+======================================================================================================================
 .. figure:: ../images/ga.png
    :alt: 
+
+
+Python Script
+=============
 
 .. code:: r
 
@@ -73,11 +94,14 @@ Load/install libraries
    
    # The analysis takes over 4 hours
 
+Standard RStudio Console Output
+===============================
 
 .. figure:: ../images/lot.png
    :alt: 
    
-   
+Analysis Plot
+=============
    
 .. figure:: ../images/lot2.png
    :alt: 
