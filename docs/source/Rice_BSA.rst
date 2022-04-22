@@ -20,6 +20,8 @@ Prerequisite Software Tools:
 
 .. code:: r
 
+   Python 3.6 or above is required to run the script.
+
    # For more efficient comupting of the algorithm please download Fisher's Exact Test.
 
    Installation
