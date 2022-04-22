@@ -34,7 +34,9 @@ Load/install libraries
 
 ==================================================================================================================================================================================
 
-# I want to view the first line #CHROM and relevant Format Fields because I know in order for this to work there must be a GQ (Genotype Quality)   variable in the Format      Field. 
+.. code:: r
+
+   I want to view the first line CHROM and relevant Format Fields because I know in order for this to work there must be a GQ (Genotype Quality) variable in the Format Field. 
       
 .. figure:: ../images/gt.png
    :alt: 
