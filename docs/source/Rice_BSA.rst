@@ -20,11 +20,11 @@ Load/install libraries
 ::
 
    # Set the Working Directory to where VCF file is stored in file system
-
+   # In this case it is in a directory named RiceCold
 .. code:: r 
 
    setwd("/home/michael/Desktop/RiceCold/")
-
+   
 Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2), also the QTLseqR functions will only take SNPS, ie, length of REF and ALT== 1
 ==================================================================================================================================================================================
 
