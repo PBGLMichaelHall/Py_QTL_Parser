@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QTL_BSA_in_Python &mdash; QTL_BSA_in_Python 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QTL_BSA_in_Python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">QTL_BSA_in_Python</a><ul>
+<li><a class="reference internal" href="#examples">Examples:</a></li>
+<li><a class="reference internal" href="#load-install-libraries">Load/install libraries</a></li>
+<li><a class="reference internal" href="#vcf-file-must-only-contain-bialleleic-variants-filter-upstream-e-g-with-bcftools-view-m2-m2-also-the-qtlseqr-functions-will-only-take-snps-ie-length-of-ref-and-alt-1">Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2), also the QTLseqR functions will only take SNPS, ie, length of REF and ALT== 1</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QTL_BSA_in_Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>QTL_BSA_in_Python</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Rice_BSA.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="qtl-bsa-in-python">
+<h1>QTL_BSA_in_Python</h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Michael Hall</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>4/13/2022</p>
+</dd>
+</dl>
+<section id="examples">
+<h2>Examples:</h2>
+</section>
+<section id="load-install-libraries">
+<h2>Load/install libraries</h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&quot;PBGLMichaelHall/Py_QTL_Parser&quot;</span><span class="p">,</span><span class="n">force</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">PyQTLParser</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">vcfR</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the Working Directory to where VCF file is stored in file system</span>
+</pre></div>
+</div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="s">&quot;/home/michael/Desktop/RiceCold/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="vcf-file-must-only-contain-bialleleic-variants-filter-upstream-e-g-with-bcftools-view-m2-m2-also-the-qtlseqr-functions-will-only-take-snps-ie-length-of-ref-and-alt-1">
+<h2>Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2), also the QTLseqR functions will only take SNPS, ie, length of REF and ALT== 1</h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">&lt;-</span> <span class="s">&quot;wGQ-freebayes~bwa~IRGSP-1.0~both-segregant_bulks~filtered-default.vcf.gz&quot;</span>
+
+<span class="n">vcf</span> <span class="o">&lt;-</span> <span class="nf">read.vcfR</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+<span class="n">VCF_TIDY</span> <span class="o">&lt;-</span> <span class="nf">vcfR2tidy</span><span class="p">(</span><span class="n">vcf</span><span class="p">)</span>
+
+<span class="nf">Py_QTL_Parser</span><span class="p">(</span><span class="n">vcf</span> <span class="o">=</span> <span class="n">VCF_TIDY</span><span class="p">,</span> <span class="n">HighBulk</span> <span class="o">=</span> <span class="s">&quot;ET-pool-385&quot;</span><span class="p">,</span> <span class="n">LowBulk</span> <span class="o">=</span> <span class="s">&quot;ES-pool-430&quot;</span><span class="p">)</span>
+
+
+<span class="c1">#Run this command in Terminal calling the python script where</span>
+<span class="o">-</span><span class="n">i</span> <span class="n">input</span> <span class="n">file</span>
+<span class="o">-</span><span class="n">o</span> <span class="n">name</span> <span class="n">of</span> <span class="n">output</span> <span class="n">directory</span> <span class="n">where</span> <span class="n">plots</span> <span class="n">go</span>
+<span class="o">-</span><span class="n">p</span> <span class="n">population</span> <span class="n">structure</span>
+<span class="o">-</span><span class="n">b</span> <span class="n">sample</span> <span class="n">size</span> <span class="n">from</span> <span class="n">HighBulk</span><span class="p">,</span><span class="n">LowBulk</span>
+
+<span class="n">python</span> <span class="n">PyBSASeq.py</span> <span class="o">-</span><span class="n">i</span> <span class="n">Hall.csv</span> <span class="o">-</span><span class="n">o</span> <span class="n">RiceCold</span> <span class="o">-</span><span class="n">p</span> <span class="n">F2</span> <span class="o">-</span><span class="n">b</span> <span class="m">430</span><span class="p">,</span><span class="m">385</span>
+
+<span class="c1">#Please refer to:</span>
+<span class="n">https</span><span class="o">://</span><span class="n">github.com</span><span class="o">/</span><span class="n">dblhlx</span><span class="o">/</span><span class="n">PyBSASeq</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">BulksOnly</span>
+<span class="n">for</span> <span class="n">more</span> <span class="n">help</span>
+
+<span class="c1">#The analysis takes over 4 hours</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="" src="_images/lot.png" />
+</figure>
+<figure class="align-default">
+<img alt="" src="_images/lot2.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Michael Hall.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
