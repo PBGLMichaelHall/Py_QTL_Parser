@@ -1,6 +1,8 @@
-# Py_QTL_Parser
+---
+title: "Python QTL"
+---
 ```{r QTL}
-devtools::install_github("PBGLMichaelHall/QTLseqr",force = TRUE)
+devtools::install_github("PBGLMichaelHall/Py_QTL_Parser",force = TRUE)
 library(PyQTLParser)
 library(vcfR)
 
@@ -20,4 +22,7 @@ Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430")
  https://github.com/dblhlx/PyBSASeq/tree/master/BulksOnly
  for more help
  #The analysis takes over 4 hours
+ 
+![TerminalOutput](https://github.com/PBGLMichaelHall/Py_QTL_Parser/blob/main/extdata/TerminalOutput.png)
+ 
 ```
