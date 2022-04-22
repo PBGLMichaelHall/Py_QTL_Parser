@@ -7,6 +7,29 @@ title: "Python QTL"
 # Please SEE https://github.com/dblhlx/PyBSASeq for where the python script came frome and who developed it. In this tutorial I develop a generic parser in R which produces an CSV file used as an argument when calling python script PyBSASeq.py. It is another method to perform a Quantitative Trait Locus analysis. 
 ######################################################################################################################################################
 
+
+
+#########################################################################################################################################################
+# For more efficient comupting of the algorithm please download Fisher's Exact Test.
+
+```r
+Installation
+
+Within this folder :
+
+git clone git://github.com/brentp/fishers_exact_test.git
+pip install .
+
+From PyPI :
+
+pip install fisher
+
+Or install the development version :
+
+pip install git+git://github.com/brentp/fishers_exact_test.git
+```
+
+
 # For Read the Docs please visit:
 https://py-qtl-parser.readthedocs.io/en/latest/Rice_BSA.html
 
