@@ -5,6 +5,30 @@ QTL_BSA_in_Python
 :Author: Michael Hall
 :Date:   4/13/2022
 
+Prerequisite Software Tools:
+============================
+
+.. code:: r
+
+   # For more efficient comupting of the algorithm please download Fisher's Exact Test.
+
+   Installation
+
+   Within this folder :
+
+   git clone git://github.com/brentp/fishers_exact_test.git
+   pip install .
+
+   From PyPI :
+
+   pip install fisher
+
+   Or install the development version :
+
+   pip install git+git://github.com/brentp/fishers_exact_test.git
+
+
+
 
 Examples:
 =========
