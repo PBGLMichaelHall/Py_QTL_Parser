@@ -100,8 +100,8 @@ Standard RStudio Console Output
 .. figure:: ../images/lot.png
    :alt: 
    
-Analysis Plot
-=============
+Analysis Plot of number of SNPs called in window, SNP ratio, G Statistic and Delta AF or change in Allelic Frequencies
+============================================================================
    
 .. figure:: ../images/lot2.png
    :alt: 
