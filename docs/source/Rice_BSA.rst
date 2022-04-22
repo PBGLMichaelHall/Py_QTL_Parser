@@ -121,8 +121,23 @@ Python Script
    -o name of output directory where plots go
    -p population structure
    -b sample size from HighBulk,LowBulk
+   -v alpha,smalpha
+   -s slidingWindowSize,incrementalStep
    
-   python PyBSASeq.py -i Hall.csv -o RiceCold -p F2 -b 430,385
+   The default cutoff p-value for identifying significant SNPs (sSNP) from the SNP dataset is 0.01 (alpha), 
+   and the default cutoff p-value for identifying sSNPs from the simulated dataset is 0.1 (smalpha). 
+   These values can be changed using the following options:
+
+
+
+   alpha and smalpha should be in the range of 0.0 – 1.0, the chosen value should make statistical sense. 
+   The greater the smalpha value, the higher the threshold and the lower the false positive rate.
+
+   The default size of the sliding window is 2000000 (base pairs) and the incremental step is 10000 (base pairs), 
+   and their values can be changed using the following option:
+
+
+
 
    Please refer to:
    https://github.com/dblhlx/PyBSASeq/tree/master/BulksOnly
@@ -130,6 +145,11 @@ Python Script
    
    # The analysis takes over 4 hours
 
+   # Call the python script by invoking python interpreter and include Hall.csv input file, output directory name, population structure 'F2', and Bulk Sizes
+      
+   python PyBSASeq.py -i Hall.csv -o RiceCold -p F2 -b 430,385
+   
+   
 Standard RStudio Console Output
 ===============================
 
