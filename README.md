@@ -1,6 +1,10 @@
 ---
 title: "Python QTL"
 ---
+
+# Please SEE https://github.com/dblhlx/PyBSASeq for where the python script came frome and who developed it.
+
+
 ```{r QTL}
 devtools::install_github("PBGLMichaelHall/Py_QTL_Parser",force = TRUE)
 library(PyQTLParser)
