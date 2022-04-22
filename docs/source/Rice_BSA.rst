@@ -24,10 +24,17 @@ Load/install libraries
 .. code:: r 
 
    setwd("/home/michael/Desktop/RiceCold/")
+.. code:: r
+
+   Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2).
    
-Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2), also the QTLseqR functions will only take SNPS, ie, length of REF and ALT== 1
+.. code:: r
+
+   Also, the QTL analysis will only take SNPS, ie, length of REF and ALT== 1. However this is addressed in Py_QTL_Parser function.
+
 ==================================================================================================================================================================================
-   # I want to view the first line #CHROM and relevant Format Fields because I know in order for this to work there must be a GQ (Genotype Quality) variable in the Format      Field. 
+
+# I want to view the first line #CHROM and relevant Format Fields because I know in order for this to work there must be a GQ (Genotype Quality)   variable in the Format      Field. 
       
 .. figure:: ../images/gt.png
    :alt: 
@@ -41,21 +48,28 @@ Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcf
    VCF_TIDY <- vcfR2tidy(vcf)
    
    Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430")
-
    
-   #Run this command in Terminal calling the python script where 
+   # The file is named Hall.csv and should be in the working directory.
+   # I want to inspect the imported header.
+   
+.. figure:: ../images/ga.png
+   :alt: 
+
+.. code:: r
+
+   Run this command in Terminal calling the python script where 
    -i input file
    -o name of output directory where plots go
    -p population structure
    -b sample size from HighBulk,LowBulk
    
    python PyBSASeq.py -i Hall.csv -o RiceCold -p F2 -b 430,385
-   
-   #Please refer to:
+
+   Please refer to:
    https://github.com/dblhlx/PyBSASeq/tree/master/BulksOnly
    for more help
    
-   #The analysis takes over 4 hours
+   # The analysis takes over 4 hours
 
 
 .. figure:: ../images/lot.png
