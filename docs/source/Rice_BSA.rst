@@ -27,7 +27,11 @@ Load/install libraries
    
 Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2), also the QTLseqR functions will only take SNPS, ie, length of REF and ALT== 1
 ==================================================================================================================================================================================
-# I want to view the first line #CHROM and relevant Format Fields because I know in order for this to work there must be a GQ variable in the Format Field. 
+   # I want to view the first line #CHROM and relevant Format Fields because I know in order for this to work there must be a GQ (Genotype Quality) variable in the Format      Field. 
+      
+.. figure:: ../images/gt.png
+   :alt: 
+   
 .. code:: r
    
    file <- "wGQ-freebayes~bwa~IRGSP-1.0~both-segregant_bulks~filtered-default.vcf.gz"
