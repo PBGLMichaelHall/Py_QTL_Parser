@@ -168,4 +168,4 @@ Analysis Plots: Number of SNPs called in window, SNP ratio, G Statistic and Delt
 .. code:: r
    
 .. figure:: ../images/lot2.png
-   :alt: 
+ 
