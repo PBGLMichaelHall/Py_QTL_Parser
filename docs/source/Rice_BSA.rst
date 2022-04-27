@@ -164,6 +164,8 @@ Standard RStudio Console Output
    
 Analysis Plots: Number of SNPs called in window, SNP ratio, G Statistic and Delta AF or change in Allelic Frequencies
 =====================================================================================================================
+
+.. code:: r
    
 .. figure:: ../images/lot2.png
    :alt: 
