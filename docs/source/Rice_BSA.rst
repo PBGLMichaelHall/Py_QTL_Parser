@@ -153,6 +153,8 @@ Python Script
 Standard RStudio Console Output
 ===============================
 
+.. code:: r
+
 .. figure:: ../images/lot.png
    :alt: 
    
