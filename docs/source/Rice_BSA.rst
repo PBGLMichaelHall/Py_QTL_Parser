@@ -107,6 +107,10 @@ R Script
    
 Header of Input CSV file with overall Quality Socres, Genotype Quality and Allelic Depths for both High and Low Bulks
 ======================================================================================================================
+
+.. code:: r
+
+
 .. figure:: ../images/ga.png
    :alt: 
 
