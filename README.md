@@ -33,6 +33,8 @@ pip install git+git://github.com/brentp/fishers_exact_test.git
 # For Read the Docs please visit:
 https://py-qtl-parser.readthedocs.io/en/latest/Rice_BSA.html
 
+# Rice Cold Tolerance:
+
 
 ```{r QTL}
 devtools::install_github("PBGLMichaelHall/Py_QTL_Parser",force = TRUE)
@@ -67,7 +69,7 @@ Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430")
 ![TerminalOutput](https://user-images.githubusercontent.com/93121277/156781414-34d8517f-10cc-4bf7-bc2a-f09bb1f2b678.png)
 ![PYQTL](https://user-images.githubusercontent.com/93121277/156782187-5c642bbb-a09a-4b62-84f0-cd44857c2c07.png)
 
-
+# Sorghum Semi-Dwarfism:
 ```r
 
 file <- "freebayes_D2.filtered.vcf"
