@@ -23,9 +23,9 @@ Py_QTL_Parser <- function(vcf,HighBulk,LowBulk){
   Data <- Data <- Data[(as.matrix(Data[9]) == HighBulk), ]
   Data <- Data[, -9]
   str(Data)
-  write.table(Data, file = paste0(HighBulk, ".tsv"), row.names = FALSE,
+  write.table(Data, file = "HighBulk.tsv", row.names = FALSE,
               col.names = TRUE, sep = "\t", quote = TRUE)
-  write.table(Data, file = paste0(HighBulk, ".csv"), row.names = FALSE,
+  write.table(Data, file = "HighBulk.csv", row.names = FALSE,
               col.names = TRUE, sep = ",", quote = TRUE)
 
   CHROM <- vcf$fix$ChromKey
@@ -43,13 +43,13 @@ Py_QTL_Parser <- function(vcf,HighBulk,LowBulk){
   Data <- Data[!rowSums(nchar(as.matrix(Data[4])) != 1), ]
   Data <- Data <- Data[(as.matrix(Data[9]) == LowBulk), ]
   Data <- Data[, -9]
-  write.table(Data, file = paste0(LowBulk, ".tsv"), row.names = FALSE,
+  write.table(Data, file = "LowBulk.tsv", row.names = FALSE,
               col.names = TRUE, sep = "\t",quote = TRUE)
-  write.table(Data, file = paste0(LowBulk, ".csv"), row.names = FALSE,
+  write.table(Data, file = "LowBulk.csv", row.names = FALSE,
               col.names = TRUE, sep = ",",quote = TRUE)
   str(Data)
-  df1 <- read.csv(file = paste0(HighBulk, ".csv"), header = TRUE)
-  df2 <- read.csv(file = paste0(LowBulk, ".csv"), header = TRUE)
+  df1 <- read.csv(file = "HighBulk.csv", header = TRUE)
+  df2 <- read.csv(file = "LowBulk.csv", header = TRUE)
   df3 <- merge(df1, df2, by = c("CHROM", "POS", "REF", "ALT","QUAL"),
                all.x = FALSE, all.y = FALSE)
   df3 <- na.omit(df3)
