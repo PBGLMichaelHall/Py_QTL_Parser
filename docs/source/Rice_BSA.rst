@@ -37,7 +37,7 @@ Prerequisite Software Tools:
 
    Or install the development version :
 
-   pip install git+git://github.com/brentp/fishers_exact_test.git
+   pip install https://github.com/brentp/fishers_exact_test.git
 
 
 
