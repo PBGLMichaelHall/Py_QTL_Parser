@@ -85,6 +85,7 @@ Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "D2_F2_tt" , LowBulk = "D2_F2_TT")
 PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i Hall.csv -o Sorghum -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
 ```
 
+![PyBSASeq_WoP](https://user-images.githubusercontent.com/93121277/175874372-62ef4747-2eeb-415b-9db9-6635c98f5ebb.png)
 
 
 
