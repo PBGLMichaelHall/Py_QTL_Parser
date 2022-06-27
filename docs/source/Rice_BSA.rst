@@ -186,7 +186,7 @@ Sorghum Semi-Dwarfism
     #Windows Power Shell Terminal on Windows
     #Needed to download visual studio due to fisher exact test uses C++
 
-PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i Hall.csv -o Sorghum -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
+    PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i Hall.csv -o Sorghum -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
 
 .. figure:: ../images/SSD.png
 
