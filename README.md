@@ -81,6 +81,7 @@ VCF_TIDY <- vcfR2tidy(vcf)
 Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "D2_F2_tt" , LowBulk = "D2_F2_TT")
 
 #Windows Power Shell Terminal on Windows
+#Needed to download visual studio due to fisher exact test uses C++
 
 PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i Hall.csv -o Sorghum -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
 ```
