@@ -84,7 +84,7 @@ VCF Format Fields and Bulk Segregant Sample Names
 
 .. code:: r
 
-   I want to view the first line CHROM and relevant Format Fields because I know in order for this to work there must be a GQ (Genotype Quality) variable in the Format Field. 
+   I want to view the header partially to see relevant Format Fields GQ (Genotype Quality) which is a necessary condition upon implementing algorithm.
       
 .. figure:: ../images/gt.png
    :alt: 
