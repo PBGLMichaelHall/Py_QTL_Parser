@@ -96,11 +96,11 @@ R Script
    
    file <- "wGQ-freebayes~bwa~IRGSP-1.0~both-segregant_bulks~filtered-default.vcf.gz"
 
-   vcf <- read.vcfR(file)
+   vcf <- vcfR::read.vcfR(file)
 
-   VCF_TIDY <- vcfR2tidy(vcf)
+   VCF_TIDY <- vcfR::vcfR2tidy(vcf)
    
-   Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430")
+   Py_QTL_Parser::Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430")
    
    # The file is named Hall.csv and should be in the working directory.
    # I want to inspect the imported header.
@@ -175,16 +175,16 @@ Sorghum Semi-Dwarfism
 .. code:: r
 
 
-file <- "freebayes_D2.filtered.vcf"
+    file <- "freebayes_D2.filtered.vcf"
 
-vcf <- read.vcfR(file)
+    vcf <- vcfR::read.vcfR(file)
 
-VCF_TIDY <- vcfR2tidy(vcf)
+    VCF_TIDY <- vcfR::vcfR2tidy(vcf)
 
-Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "D2_F2_tt" , LowBulk = "D2_F2_TT")
+    Py_QTL_Parser::Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "D2_F2_tt" , LowBulk = "D2_F2_TT")
 
-#Windows Power Shell Terminal on Windows
-#Needed to download visual studio due to fisher exact test uses C++
+    #Windows Power Shell Terminal on Windows
+    #Needed to download visual studio due to fisher exact test uses C++
 
 PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i Hall.csv -o Sorghum -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
 
