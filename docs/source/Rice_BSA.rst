@@ -100,7 +100,7 @@ R Script
 
    VCF_TIDY <- vcfR::vcfR2tidy(vcf)
    
-   Py_QTL_Parser::Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430")
+   Py_QTL_Parser::Py_QTL_Parser_Bulks(vcf = VCF_TIDY, HighBulk = "ET-pool-385", LowBulk = "ES-pool-430",filename="RiceBulks")
    
    # The file is named Hall.csv and should be in the working directory.
    # I want to inspect the imported header.
@@ -151,7 +151,7 @@ Python Script
 
    # Call the python script by invoking python interpreter and include Hall.csv input file, output directory name, population structure 'F2', and Bulk Sizes
       
-   python PyBSASeq.py -i Hall.csv -o RiceCold -p F2 -b 430,385
+   python PyBSASeq.py -i RiceBulks.csv -o RiceCold.csv -p F2 -b 430,385
    
    
 Standard RStudio Console Output
@@ -181,12 +181,12 @@ Sorghum Semi-Dwarfism
 
     VCF_TIDY <- vcfR::vcfR2tidy(vcf)
 
-    Py_QTL_Parser::Py_QTL_Parser(vcf = VCF_TIDY, HighBulk = "D2_F2_tt" , LowBulk = "D2_F2_TT")
+    Py_QTL_Parser::Py_QTL_Parser_Bulks(vcf = VCF_TIDY, HighBulk = "D2_F2_tt" , LowBulk = "D2_F2_TT",filename="SorghumBulks")
 
     #Windows Power Shell Terminal on Windows
     #Needed to download visual studio due to fisher exact test uses C++
 
-    PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i Hall.csv -o Sorghum -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
+    PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i SorghumBulks.csv -o Sorghum.csv -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
 
 
 .. figure:: ../images/SSD.png
