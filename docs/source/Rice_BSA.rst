@@ -177,7 +177,9 @@ Analysis Plots: Number of SNPs called in window, SNP ratio, G Statistic and Delt
 
 
 Sorghum Semi-Dwarfism
-=====================
+---------------------
+
+
 
 .. code:: r
 
