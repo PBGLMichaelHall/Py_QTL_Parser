@@ -154,6 +154,8 @@ Python Script
    python PyBSASeq.py -i RiceBulks.csv -o RiceCold.csv -p F2 -b 430,385
    
    
+   
+   
 Standard RStudio Console Output
 ===============================
 
@@ -162,6 +164,11 @@ Standard RStudio Console Output
 .. figure:: ../images/lot.png
    :alt: 
    
+   
+   
+   
+   
+   
 Analysis Plots: Number of SNPs called in window, SNP ratio, G Statistic and Delta AF or change in Allelic Frequencies
 =====================================================================================================================
 
@@ -169,7 +176,10 @@ Analysis Plots: Number of SNPs called in window, SNP ratio, G Statistic and Delt
    
 .. figure:: ../images/lot2.png
 
-::
+
+
+
+
 
 
 
