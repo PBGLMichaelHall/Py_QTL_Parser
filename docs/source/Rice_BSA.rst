@@ -71,9 +71,13 @@ Pre-Filtering Rules
 
    Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2 --types snps YOUR.vcf.gz).
    
-.. code:: r
+   VCF file must be indexed. (tabix -p vcf YOUR.vcf.gz)
+   
+   VCF file must be annotated 
+   (bcftools annotate --rename-chrs renamechr.txt 
+   wGQ-Filt-freebayes~bwa~IRGSP-1.0~both-segregant_bulks~filtered-default.SNP.Only.Bialleleic.vcf.gz
+   > wGQ-Filt-freebayes~bwa~IRGSP-1.0~both-segregant_bulks~filtered-default.SNP.Only.Bialleleic.Intger.Chrom.vcf.gz)
 
-   Also, the QTL analysis will only take SNPS, ie, length of REF and ALT== 1. However this is addressed in Py_QTL_Parser function.
 
 =========================================================================================================================================================
 
@@ -84,11 +88,7 @@ VCF Format Fields and Bulk Segregant Sample Names
 
 .. code:: r
 
-   I want to view the header partially to see relevant Format Fields GQ (Genotype Quality) which is a necessary condition upon implementing algorithm.
-      
-.. figure:: ../images/gt.png
-   :alt: 
-   
+ 
 R Script
 ========
    
@@ -120,7 +120,7 @@ GATK (Non-Biased)
 .. code:: r
 
    python gatk VariantsToTable --variant YOUR.vcf.gz --fields CHROM --fields POS --fields REF 
-   --fields ALT --fields QUAL --genotype-fields GT --genotype-      fields AD --genotype-fields AD 
+   --fields ALT --fields QUAL --genotype-fields GT --genotype-fields AD --genotype-fields AD 
    --genotype-fields GQ --output Your.File.tsv
 
 
@@ -158,9 +158,14 @@ Python Script
    
    # The analysis takes over 4 hours
 
-   # Call the python script by invoking python interpreter and include Hall.csv input file, output directory name, population structure 'F2', and Bulk Sizes
-      
+   # Call the python script by invoking python interpreter and include Hall.csv input file, 
+   output directory name, population structure 'F2', and Bulk Sizes
+   
+   #Py_QTL_Parser::Py_QTL_Parser_Bulks
    python PyBSASeq.py -i RiceBulks.csv -o RiceCold.csv -p F2 -b 430,385
+   
+   #GATK
+   python PyBSASeq.py -i Your.file.tsv -o Final.file.tsv -p F2 -b 430,385
    
    
    
@@ -214,7 +219,8 @@ Sorghum Semi-Dwarfism
     #Windows Power Shell Terminal on Windows
     #Needed to download visual studio due to fisher exact test uses C++
 
-    PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i SorghumBulks.csv -o Sorghum.csv -p F2 --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
+    PS C:\Users\micha\OneDrive\Desktop> python .\PyBSASeq.py -i SorghumBulks.csv -o Sorghum.csv -p F2 
+    --smooth TRUE -c 99,5,6,1 -b 45,38 -v .01,.01 -s 5000000,10000 -m 100,3
 
 
 .. figure:: ../images/SSD.png
