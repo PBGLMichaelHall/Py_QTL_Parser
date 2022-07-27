@@ -69,7 +69,7 @@ Pre-Filtering Rules
 
 .. code:: r
 
-   Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2).
+   Vcf file must only contain bialleleic variants. (filter upstream, e.g., with bcftools view -m2 -M2 --types snps YOUR.vcf.gz).
    
 .. code:: r
 
@@ -105,14 +105,23 @@ R Script
    # The file is named Hall.csv and should be in the working directory.
    # I want to inspect the imported header.
    
-Header of Input CSV file with overall Quality Socres, Genotype Quality and Allelic Depths for both High and Low Bulks
-======================================================================================================================
+
+
 
 .. code:: r
 
 
 .. figure:: ../images/ga.png
    :alt: 
+
+GATK (Non-Biased)
+=================
+
+.. code:: r
+
+   python gatk VariantsToTable --variant YOUR.vcf.gz --fields CHROM --fields POS --fields REF 
+   --fields ALT --fields QUAL --genotype-fields GT --genotype-      fields AD --genotype-fields AD 
+   --genotype-fields GQ --output Your.File.tsv
 
 
 Python Script
