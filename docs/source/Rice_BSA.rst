@@ -20,6 +20,10 @@ Prerequisite Software Tools:
 
 .. code:: r
 
+   **Install software environment through MAMBA**
+   Mamba env create --file env/env.yaml
+   conda activate PythsonBSA
+   
    Python 3.6 or above is required to run the script.
 
    # For more efficient comupting of the algorithm please download Fisher's Exact Test.
@@ -31,14 +35,26 @@ Prerequisite Software Tools:
    git clone git://github.com/brentp/fishers_exact_test.git
    pip install .
 
-   From PyPI :
+   From PyPI: It is in environment file so if you installed it using this file **env.yaml** this step becomes unecessary
 
-   pip install fisher
+   **pip install fisher**
 
    Or install the development version :
 
    pip install https://github.com/brentp/fishers_exact_test.git
+   
+   **GATK**:
+   
+  git clone https://github.com/broadinstitute/gatk
+  
+  Navigate directory and find **gradlew** typing command*:
+   **gradlew bundle**
+   
+   Determine that gatk is readable, writable, and executable and if it is not then,
+   chmod +rwx 
+   Verify 
 
+   python gatk --help
 
 
 
