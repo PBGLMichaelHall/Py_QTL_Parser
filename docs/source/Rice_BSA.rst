@@ -184,7 +184,10 @@ Python Script
    #GATK
    python PyBSASeq.py -i Your.file.tsv -o Final.file.tsv -p F2 -b 430,385
    
+::
    
+ **Results** Directory 
+======================
    
    
 Standard RStudio Console Output
