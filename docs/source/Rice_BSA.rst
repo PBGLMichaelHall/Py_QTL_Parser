@@ -21,6 +21,7 @@ Prerequisite Software Tools:
 .. code:: r
 
    **Install software environment through MAMBA**
+   https://github.com/PBGLMichaelHall/Py_QTL_Parser
    Mamba env create --file env/env.yaml
    conda activate PythsonBSA
    
