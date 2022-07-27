@@ -19,8 +19,6 @@ Py_QTL_Parser_Bulks <- function(vcf,HighBulk,LowBulk,filename){
   F1.GQ <- vcf$gt$gt_GQ
   Data <- data.frame(CHROM, POS, REF, ALT, QUAL, F1.GT, F1.AD, F1.GQ,Samples)
   str(Data)
-  Data <- Data[!rowSums(nchar(as.matrix(Data[3])) != 1), ]
-  Data <- Data[!rowSums(nchar(as.matrix(Data[4])) != 1), ]
   Data <- Data <- Data[(as.matrix(Data[9]) == HighBulk), ]
   Data <- Data[, -9]
   str(Data)
@@ -40,8 +38,6 @@ Py_QTL_Parser_Bulks <- function(vcf,HighBulk,LowBulk,filename){
   S1.GQ <- vcf$gt$gt_GQ
   Data <- data.frame(CHROM, POS, REF, ALT, QUAL, S1.GT, S1.AD, S1.GQ,Samples)
   str(Data)
-  Data <- Data[!rowSums(nchar(as.matrix(Data[3])) != 1), ]
-  Data <- Data[!rowSums(nchar(as.matrix(Data[4])) != 1), ]
   Data <- Data <- Data[(as.matrix(Data[9]) == LowBulk), ]
   Data <- Data[, -9]
   write.table(Data, file = "LowBulk.tsv", row.names = FALSE,
@@ -79,8 +75,6 @@ Py_QTL_Parser_Parents <- function(vcf,Parent1,Parent2,filename){
   P1.GQ <- vcf$gt$gt_GQ
   Data <- data.frame(CHROM, POS, REF, ALT, QUAL, P1.GT, P1.AD, P1.GQ,Samples)
   str(Data)
-  Data <- Data[!rowSums(nchar(as.matrix(Data[3])) != 1), ]
-  Data <- Data[!rowSums(nchar(as.matrix(Data[4])) != 1), ]
   Data <- Data <- Data[(as.matrix(Data[9]) == Parent1), ]
   Data <- Data[, -9]
   str(Data)
@@ -98,8 +92,6 @@ Py_QTL_Parser_Parents <- function(vcf,Parent1,Parent2,filename){
   P2.GQ <- vcf$gt$gt_GQ
   Data <- data.frame(CHROM, POS, REF, ALT, QUAL, P2.GT, P2.AD, P2.GQ,Samples)
   str(Data)
-  Data <- Data[!rowSums(nchar(as.matrix(Data[3])) != 1), ]
-  Data <- Data[!rowSums(nchar(as.matrix(Data[4])) != 1), ]
   Data <- Data <- Data[(as.matrix(Data[9]) == Parent2), ]
   Data <- Data[, -9]
   write.table(Data, file = "Parent2.tsv", row.names = FALSE,
@@ -113,3 +105,6 @@ Py_QTL_Parser_Parents <- function(vcf,Parent1,Parent2,filename){
   df3 <- na.omit(df3)
   write.table(df3, file = paste0(filename,".csv"), row.names = FALSE, col.names = TRUE,sep = ",")
 }
+
+
+
