@@ -52,7 +52,7 @@ Prerequisite Software Tools:
    **gradlew bundle**
    
    Determine that gatk is readable, writable, and executable and if it is not then,
-   chmod +rwx 
+   chmod +rwx gatk
    Verify 
 
    python gatk --help
