@@ -89,7 +89,7 @@ Pre-Filtering Rules
    
    VCF file must be indexed. (tabix -p vcf YOUR.vcf.gz)
    
-   VCF file must be annotated 
+   VCF file must be annotated if using GATK method
    (bcftools annotate --rename-chrs renamechr.txt 
    wGQ-Filt-freebayes~bwa~IRGSP-1.0~both-segregant_bulks~filtered-default.SNP.Only.Bialleleic.vcf.gz
    > wGQ-Filt-freebayes~bwa~IRGSP-1.0~both-segregant_bulks~filtered-default.SNP.Only.Bialleleic.Intger.Chrom.vcf.gz)
