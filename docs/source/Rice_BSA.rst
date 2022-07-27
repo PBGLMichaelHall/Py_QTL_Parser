@@ -137,8 +137,8 @@ GATK (Non-Biased)
 .. code:: r
 
    python gatk VariantsToTable --variant YOUR.vcf.gz --fields CHROM --fields POS --fields REF 
-   --fields ALT --fields QUAL --genotype-fields GT --genotype-fields AD --genotype-fields AD 
-   --genotype-fields GQ --output Your.File.tsv
+   --fields ALT --fields QUAL --genotype-fields GT --genotype-fields AD --genotype-fields GQ 
+   --output Your.File.tsv
 
 
 Python Script
